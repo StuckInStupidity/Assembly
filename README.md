@@ -3,7 +3,7 @@
 | Assembler | Assembly syntax | File extension | Architecture | Usage |
 |:---------:|:---------------:|:--------------:|:------------:|:-----:|
 | GNU Assembler (GAS) | AT&T, ARM, also supports Intel) | `.s` | ARM, AArch64, x86_64-32, etc... | Linux programming, embedded systems, operating systems |
-| NASM (Netwide Assembler) / MASM / FASM | Intel | `.asm` | x86 (32-bits), x86-64 | Windows programming, bootloaders, kernels, desktop software |
+| NASM (Netwide Assembler) / MASM / FASM | Intel | `.asm` | x86 (32-bits), x86-64 | Win/Linux programming, bootloaders, kernels, desktop software |
 
 ## System calls tables
 
