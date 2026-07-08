@@ -1,9 +1,9 @@
 # Assembly
 
 | Assembler | Assembly syntax | File extension | Architecture | Usage |
-|-----------|-----------------|----------------|--------------|-------|
-| GNU Assembler (GAS) | AT&T (default on x86), supports Intel syntax | .s | ARM, AArch64, x86_64-32, etc... | Linux programming, embedded systems, operating systems |
-| NASM (Netwide Assembler) / MASM / FASM | Intel | .asm | x86 (32-bits), x86-64 | Windows programming, bootloaders, kernels, desktop software |
+|:---------:|:---------------:|:--------------:|:------------:|:-----:|
+| GNU Assembler (GAS) | AT&T (default on x86), supports Intel syntax | `.s` | ARM, AArch64, x86_64-32, etc... | Linux programming, embedded systems, operating systems |
+| NASM (Netwide Assembler) / MASM / FASM | Intel | `.asm` | x86 (32-bits), x86-64 | Windows programming, bootloaders, kernels, desktop software |
 
 ## System calls tables
 
@@ -56,8 +56,8 @@ hello.c  <--preprocessor-->  hello.i  <--clang generator-->  hello.ll  <--LLVM o
 or
 ```
 clang -E hello.c -o hello.i              # Preprocess
-clang -S -emit-llvm hello.i -o hello.ll  # Generate LLVM IR
-clang -S hello.ll -o hello.s             # LLVM IR → Assembly
+clang -S -emit-llvm hello.i -o hello.ll  # Clang -> LLVM IR
+clang -S hello.ll -o hello.s             # LLVM IR -> Assembly
 clang -c hello.s -o hello.o              # Assemble
 clang hello.o -o hello                   # Link
 ```
