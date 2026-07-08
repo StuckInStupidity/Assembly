@@ -9,8 +9,8 @@ section .text
 addTwo:
     PUSH ebp
     MOV ebp, esp        ; EBP = ESP (EBP becomes a stable reference for this stack frame) 
-    MOV eax, [ebp + 8]
-    MOV ebx, [ebp + 12]
+    MOV eax, [ebp + 8]  ; memory access
+    MOV ebx, [ebp + 12] ; memory access
     ADD eax, ebx        ; eax = 5
     POP ebp             ; POP ebp => restores old ebp (MOV ebp, [esp]) and update pointeur ESP -> RET addr (ADD esp, 4)
     RET                 ; pops the return address into EIP and resumes execution after CALL
