@@ -4,8 +4,8 @@
 ; regs for x86-64: RAX, RBX, RCX, RDX, RBP, RSP
 
 global _start
-section .text
 
+section .text
 addTwo:
     PUSH ebp
     MOV ebp, esp        ; EBP = ESP (EBP becomes a stable reference for this stack frame) 
