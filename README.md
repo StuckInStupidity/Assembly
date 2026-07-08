@@ -1,7 +1,5 @@
 # Assembly
 
----
-
 | Assembler | Assembly syntax | File extension | Architecture | Usage |
 |-----------|-----------------|----------------|--------------|-------|
 | GNU Assembler (GAS) | AT&T (default on x86), supports Intel syntax | .s | ARM, AArch64, x86_64-32, etc... | Linux programming, embedded systems, operating systems |
