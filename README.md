@@ -30,6 +30,19 @@ ld hello.o -o hello
 nasm -f elf64 hello.asm -o hello.o
 ld hello.o -o hello
 ```
+## Using gdb
+```
+as --64 -g hello.s -o hello.o (GAS)
+nasm -f elf64 -g -F dwarf hello.asm -o hello.o (NASM)
+
+gdb ./hello
+(gdb) break _start
+(gdb) run
+(gdb) stepi (or si)
+(gdb) info registers
+(gdb) layout regs
+(gdb) layout asm
+```
 
 ---
 
