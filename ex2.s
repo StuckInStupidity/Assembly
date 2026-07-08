@@ -6,8 +6,8 @@
 .global _start
 .equ endlist, list + 20    @ 5 elements × 4 bytes
 _start:
-	LDR R0, =list
-	LDR R3, =endlist
+	LDR R0, =list        ; memory access
+	LDR R3, =endlist     ; memory access
 	MOV R2, #0
 loop:
 	CMP R0, R3
