@@ -1,7 +1,7 @@
 ; Architecture: x86 (32-bit)
 ; Assembler syntax: Intel syntax
 ; regs for x86-32: EAX, EBX, ECX, EDX, EBP, ESP
-; regs for x86-64: RAX, RBX, RCX, RDX, RBP, RSP
+; regs for x86-64: RAX, RBX, RCX, RDX, RBP, RSP, RDI, RSI, R8-R15
 
 global _start
 
