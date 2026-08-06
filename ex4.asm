@@ -39,16 +39,57 @@ main:
 ; | EBP            |                |
 ; |----------------|                |
 ;                                   v
-;                              RAM (Memory)
-;                          |----------------|
-;                          |     Stack      |
-;                          | pointer vars   |
-;                          | local vars     |
-;                          | saved regs     |
-;                          | return addr    |
-;                          |----------------|
-;                          |     Heap       |
-;                          | malloc data    |
-;                          | pointer values |
-;                          |----------------|
-; The register ESP/RSP contains an address in RAM where the top of the stack currently is.
+;                       Espace virtuel du processus
+;                                   |
+;                           +----------------+
+;                           | Stack          |
+;                           | local vars     |
+;                           | return addr    |
+;                           | saved regs     |
+;                           +----------------+
+;                           |                |
+;                           +----------------+
+;                           | Heap           |
+;                           | malloc data    |
+;                           | pointer values |
+;                           +----------------+
+;                           | .data          |
+;                           +----------------+
+;                           | .text          |
+;                           +----------------+
+;                                   |
+;                                   |
+;                          Table des pages (MMU)
+;                                   |
+;                                   v
+;                          RAM physique (memory)
+;                           +----------------+
+;                           | Page stack P1  |
+;                           +----------------+
+;                           | Page heap P1   |
+;                           +----------------+
+;                           | Page .text P2  |
+;                           +----------------+
+;                           | Kernel         |
+;                           |Table des pages |
+;                           +----------------+
+;
+; The register ESP/RSP contains an address where the top of the stack currently is.
+;
+; CPU veut accéder à 0x7FFF1000
+;             |
+;             v
+;     Cherche dans le TLB (cache spécial)
+;             |
+;       +-----+-----+
+;       |           |
+;      trouvé     absent
+;       |           |
+;       v           v
+;    adresse      consulte
+;    physique     table des pages
+;       |           |
+;       +-----------+
+;             |
+;             v
+;            RAM
