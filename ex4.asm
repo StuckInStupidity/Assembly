@@ -10,7 +10,7 @@ global main
 section .data
     msg2 DB "After HW", 0
     msg  DB "Hello World!", 0
-    fmt  DB "output is: %s %s", 10, 0    ; 10 => add \n
+    fmt  DB "output is: %s %s", 10, 0    ; 10 => add \n  and  0 => bc printf is called / no length argument to compute instead
 
 section .text
 main:
