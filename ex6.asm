@@ -3,11 +3,11 @@
 ; regs for x86-32: EAX, EBX, ECX, EDX, EBP, ESP
 ; regs for x86-64: RAX, RBX, RCX, RDX, RBP, RSP, RDI, RSI, R8-R15
 
-; DB (1 Byte)
+; DB (1 Byte) : min size of instruction
 ; DW (2 bytes)
 ; DD (4 bytes)
 ; DQ (8 bytes)
-; DT (10 bytes)
+; DT (10 bytes) : max size of instruction
 
 ; EAX (32 bits)
 ; +----------------+----------------+
@@ -48,9 +48,9 @@ main:
 	
 ; AND, OR, NOT act as AND, OR, NOT tables between each bit of the same weight
 
-; CF	Carry Flag	        Unsigned overflow/carry out of the most significant bit
+; CF	Carry Flag	            Unsigned overflow/carry out of the most significant bit
 ; OF	Overflow Flag	        Signed overflow
-; ZF	Zero Flag	        Result is zero
-; SF	Sign Flag	        Result is negative (copies the most significant bit)
-; PF	Parity Flag	        Number of 1 bits in the low byte is even
+; ZF	Zero Flag	            Result is zero
+; SF	Sign Flag	            Result is negative (copies the most significant bit)
+; PF	Parity Flag	            Number of 1 bits in the low byte is even
 ; AF	Auxiliary Carry Flag	Carry from bit 3 to bit 4 (used mainly for BCD)
