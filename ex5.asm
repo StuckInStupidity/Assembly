@@ -7,7 +7,7 @@ global main
 
 section .data              ; static memory region used to store global and static variables
 	list DD 1,4,6,8
-	len equ $ - list       ; len = .-list : GAS syntax
+	len equ $ - list
 
 section .text
 main:
