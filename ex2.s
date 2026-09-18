@@ -23,6 +23,11 @@ exit:
 list:
 	.word 1,2,3,4,5   @ 1 is at offset 0 => 5 is at offset 16
 
+@ incrementation
 @ LDR R1, [R0, #4]    @ just offset access, address unchanged
 @ LDR R1, [R0, #4]!   @ move R0 pointer by +4 then load from this new address
 @ LDR R1, [R0], #4    @ load from the current address then move R0 pointer by +4
+@ decrementation
+@ LDR R1, [R0, #-4]    @ just offset access, address unchanged
+@ LDR R1, [R0, #-4]!   @ move R0 pointer by -4 then load from this new address
+@ LDR R1, [R0], #-4    @ load from the current address then move R0 pointer by -4
