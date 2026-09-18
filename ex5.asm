@@ -14,9 +14,9 @@ main:
 	MOV eax, 0
 	MOV ecx, 0
 loop:
-	CMP eax, len
+	CMP eax, len                      ; instruction triggering a flag Z state (could have been subtraction for ex)
 	JE end                            ; (JE, JNE, JL, JG, JLE, JGE)
-	MOV ebx, [list + eax]             ; memory access (mov in ebx, the value stored at address list + eax)
+	MOV ebx, [list + eax]             ; memory access by indexation (mov in ebx, the value stored at address list + eax)
 	ADD ecx, ebx
 	ADD eax, 4                        ; if it was DB we could have used INC eax
 	JMP loop
