@@ -1,5 +1,5 @@
 ; Architecture: x86-64
-; Assembler syntax: Intel syntax
+; Assembler syntax: NASM Intel syntax
 ; regs for x86-32: EAX, EBX, ECX, EDX, EBP, ESP
 ; regs for x86-64: RAX, RBX, RCX, RDX, RBP, RSP, RDI, RSI, R8-R15
 
