@@ -6,7 +6,7 @@
 global main
 
 section .data              ; static memory region used to store global and static variables
-	list DD 1,4,6,8        ; pour une liste "hello",0 -> le ,0 permet de MOV + beq end (Z flag)
+	list DD 1,4,6,8        ; pour une liste "hello",0 -> le ,0 permet de MOV + JE end (Z flag)
 	len equ $ - list
 
 section .text
