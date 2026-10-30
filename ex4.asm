@@ -70,8 +70,10 @@ main:
 ;                           +----------------+
 ;                           | Page .text P2  |
 ;                           +----------------+
+;                           | Page stack P1  |
+;                           +----------------+
 ;                           | Kernel         |
-;                           |Table des pages |
+;                           |Tables des pages|
 ;                           +----------------+
 ;
 ; The register ESP/RSP contains an address where the top of the stack currently is.
