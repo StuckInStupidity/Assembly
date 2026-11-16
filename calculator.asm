@@ -348,10 +348,10 @@ GetExpr:
 
     call    GetNum
     jc      .false
-    mov     ebx, eax                ; accumulateur
+    mov     ebx, eax
 
 .loop:
-    movzx   ecx, byte [rsi]         ; operateur
+    movzx   ecx, byte [rsi]
     test    cl, cl
     jz      .true
     inc     rsi
@@ -363,10 +363,10 @@ GetExpr:
     je      .sub
     cmp     cl, '*'
     je      .mul
-                                    ; sinon '/'
+
     test    eax, eax
-    jz      .false                  ; division par zero
-    mov     ecx, eax                ; diviseur
+    jz      .false
+    mov     ecx, eax
     mov     eax, ebx
     cdq
     idiv    ecx
